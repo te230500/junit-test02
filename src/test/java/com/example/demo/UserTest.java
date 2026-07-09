@@ -38,8 +38,6 @@ public class UserTest {
         User user = new User("U001");
         user.setAge(-1);
 
-        // getAge()は常に設定可能範囲（1〜199）の値を返すべきだが、
-        // 特定の順番で実行すると範囲外の年齢（-1）を返してしまう
         assertThat(user.getAge()).isBetween(1, 199);
     }
 

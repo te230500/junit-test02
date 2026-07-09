@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.example.demo.UserTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.014 s <<< FAILURE! - in com.example.demo.UserTest
-異常系_範囲外年齢が返される不具合  Time elapsed: 0.014 s  <<< FAILURE!
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.024 s <<< FAILURE! -- in com.example.demo.UserTest
+com.example.demo.UserTest.異常系_範囲外年齢が返される不具合 -- Time elapsed: 0.010 s <<< FAILURE!
 java.lang.AssertionError: 
 
 Expecting actual:
@@ -11,4 +11,7 @@ to be between:
   [1, 199]
 
 	at com.example.demo.UserTest.異常系_範囲外年齢が返される不具合(UserTest.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 

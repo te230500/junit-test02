@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.demo.UserTest" time="0.024" tests="5" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.demo.UserManagerTest" time="0.101" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,22 +58,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="異常系_範囲外年齢登録" classname="com.example.demo.UserTest" time="0.003"/>
-  <testcase name="正常系_ユーザー管理コード登録参照" classname="com.example.demo.UserTest" time="0.002"/>
-  <testcase name="正常系_年齢登録参照" classname="com.example.demo.UserTest" time="0.001"/>
-  <testcase name="正常系_名前登録参照" classname="com.example.demo.UserTest" time="0.002"/>
-  <testcase name="異常系_範囲外年齢が返される不具合" classname="com.example.demo.UserTest" time="0.01">
-    <failure message="&#10;Expecting actual:&#10;  -1&#10;to be between:&#10;  [1, 199]&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-
-Expecting actual:
-  -1
-to be between:
-  [1, 199]
-
-	at com.example.demo.UserTest.異常系_範囲外年齢が返される不具合(UserTest.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-  </testcase>
+  <testcase name="正常系_UserManagerインスタンス同一" classname="com.example.demo.UserManagerTest" time="0.063"/>
+  <testcase name="正常系_user全削除" classname="com.example.demo.UserManagerTest" time="0.009"/>
+  <testcase name="正常系_code指定user削除" classname="com.example.demo.UserManagerTest" time="0.003"/>
+  <testcase name="正常系_userMap登録参照" classname="com.example.demo.UserManagerTest" time="0.001"/>
+  <testcase name="異常系_同コードのユーザーが削除されない不具合" classname="com.example.demo.UserManagerTest" time="0.0"/>
+  <testcase name="正常系_userList登録参照" classname="com.example.demo.UserManagerTest" time="0.002"/>
 </testsuite>
