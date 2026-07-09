@@ -65,6 +65,9 @@ public class UserManagerTest {
         
         assertThat(manager.getUserList()).doesNotContain(user1);
         assertThat(manager.getUserList()).contains(user2);
+        
+        assertThat(manager.getUserMap().get("U001")).isNull();
+        assertThat(manager.getUserMap()).containsKeys("U002");
     }
 
     @Test
@@ -80,5 +83,43 @@ public class UserManagerTest {
         manager.deleteUser("U001");
         
         assertThat(manager.getUserList()).contains(user2);
+    }
+
+    @Test
+    public void 正常系_MapList初期生成() {
+        UserManager manager = UserManager.getInstance();
+        manager.deleteAllUser();
+
+        assertThat(manager.getUserList()).isNotNull();
+        assertThat(manager.getUserList()).isEmpty();
+        assertThat(manager.getUserMap()).isNotNull();
+        assertThat(manager.getUserMap()).isEmpty();
+    }
+
+    @Test
+    public void 正常系_List登録順序保持() {
+        UserManager manager = UserManager.getInstance();
+        manager.deleteAllUser();
+
+        User user1 = new User("U001");
+        User user2 = new User("U002");
+        manager.setUserToList(user1);
+        manager.setUserToList(user2);
+
+        assertThat(manager.getUserList().get(0)).isEqualTo(user1);
+        assertThat(manager.getUserList().get(1)).isEqualTo(user2);
+    }
+
+    @Test
+    public void 正常系_Mapキー確認() {
+        UserManager manager = UserManager.getInstance();
+        manager.deleteAllUser();
+
+        User user1 = new User("U001");
+        User user2 = new User("U002");
+        manager.setUserToMap(user1);
+        manager.setUserToMap(user2);
+
+        assertThat(manager.getUserMap()).containsKeys("U001", "U002");
     }
 }
